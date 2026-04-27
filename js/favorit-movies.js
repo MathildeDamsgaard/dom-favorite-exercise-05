@@ -92,3 +92,40 @@ const movies = [
     url: "https://www.example.com/pulp-fiction",
   },
 ];
+
+const favoritesContainer = document.querySelector("#favorites-container");
+
+let favoriteIds = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
+
+const favoriteMovies = movies.filter((item) => {
+  return favoriteIds.includes(item.id);
+});
+
+function displayMovies(movieList) {
+  if (movieList.length === 0) {
+    favoritesContainer.innerHTML =
+      "<p> Du har endnu ikke valgt nogen favoritudstillinger </p>";
+    return;
+  } // Her slutter if-sætningen
+
+  const html = movieList
+    .map((movie) => {
+      // Her skal jeg indsætte noget JS kode
+      return `  <article>
+      <h2>${movie.title}</h2>
+      <ul>
+        <li>Genre: ${movie.genre}</li>
+        <li>År: ${movie.year}</li>
+        <li>Varighed: ${movie.duration} h</li>
+      </ul>
+      <figure>
+        <a href="${movie.url}" target="_blank" rel="noopener noreferrer"><img src="${movie.img}" alt="${movie.title}"></a>
+      <figcaption>${movie.title}</figcaption></figure>
+    </article>`;
+    })
+    .join("");
+
+  favoritesContainer.innerHTML = html;
+} // Her slutter funktionen
+
+displayMovies(favoriteMovies);

@@ -197,7 +197,7 @@ function toggleFavorite(id) {
     favoriteIds.push(id);
   }
 
-  localStorage.setItem("favoriteExhibitions", JSON.stringify(favoriteIds));
+  localStorage.setItem("favoriteMovies", JSON.stringify(favoriteIds));
 
   displayMovies(movies);
 }
