@@ -36,3 +36,12 @@ article {
   border-radius: 8px;
   padding: 1rem;
 }
+
+.favorite-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: relative;
+  left: 170px;
+}

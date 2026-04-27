@@ -162,8 +162,8 @@ function displayMovies(movieList) {
 
       return `  <article>
       <button class="favorite-btn" data-id="${movie.id}" aria-label="Vælg favorit">
-                ${star}
-            </button>
+        ${star}
+      </button>
       <h2>${movie.title}</h2>
       <ul>
         <li>Genre: ${movie.genre}</li>
