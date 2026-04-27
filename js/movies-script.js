@@ -177,16 +177,16 @@ function displayMovies(movieList) {
     })
     .join("");
   moviesContainer.innerHTML = html;
-}
 
-const favoriteButtons = document.querySelectorAll(".favorite-btn");
+  const favoriteButtons = document.querySelectorAll(".favorite-btn");
 
-favoriteButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const movieId = Number(button.dataset.id);
-    toggleFavorite(movieId);
+  favoriteButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const movieId = Number(button.dataset.id);
+      toggleFavorite(movieId);
+    });
   });
-});
+}
 
 function toggleFavorite(id) {
   if (favoriteIds.includes(id)) {
